@@ -1,14 +1,15 @@
 ## Getting Started
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Welcome to my Ticketautomat. Originally this project was started in Late 2019 as part of computer science in S1.
 
-## Folder Structure
+## In Progress
 
-The workspace contains two folders by default, where:
+- Change
+- Round doubles accordingly
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Future
 
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+- More tickets
+- Build a map with different stations
+- GUI
+- 
