@@ -1,9 +1,17 @@
 import java.util.Scanner;
 
+import javax.crypto.KeyAgreement;
+
 public class Ticketautomat {
     private static double priceSingle = 1.8;
     private static double priceDay = 3.4;
     private static double priceWeek = 21.0;
+    private static double priceMonth = 80.0;
+    private static double priceYear = 850.0;
+    private static double priceAddon1 = 2.6;
+    private static double priceAddon2 = 3.2;
+    private static double priceAddon3 = 3.8;
+    private static double priceBike = 2.7;
     private static double paid = 0;
     public static double sum = 0;
     public static int sold = 0;
@@ -12,24 +20,49 @@ public class Ticketautomat {
     private static boolean check = true;
 
     public static void Welcome() {
-        System.out.println("Hello, how can I help you today?");
-        System.out.println("Buy Single Ticket [1]");
-        System.out.println("Buy Day Ticket [2]");
-        System.out.println("Buy Week Ticket [3]");
+        System.out.println("Hallo, wie kann ich dir helfen?");
+        System.out.println("Einzelkarte kaufen [1]");
+        System.out.println("Tageskarte kaufen [2]");
+        System.out.println("Wochenkarte kaufen [3]");
+        System.out.println("Monatskarte kaufen [4]");
+        System.out.println("Jahreskarte kaufen [5]");
+        System.out.println("Zusatzkarte kaufen [6]");
         int choose = keyboard.nextInt();
 
         if (choose == 1) {
-            System.out.println("Single Ticket currently unavailable..");
-            Pay(priceSingle, "Single Ticket");
+            Pay(priceSingle, "Einzelkarte");
         } else if (choose == 2) {
-            System.out.println("Day Ticket currently unavailable..");
-            Pay(priceDay, "Day Ticket");
+            Pay(priceDay, "Tageskarte");
         } else if (choose == 3) {
-            System.out.println("Week Ticket currently unavailable..");
-            Pay(priceWeek, "Week Ticket");
+            Pay(priceWeek, "Wochenkarte");
+        } else if (choose == 4) {
+            Pay(priceMonth, "Monatskarte");
+        } else if (choose == 5) {
+            Pay(priceYear, "Jahreskarte");
+        } else if (choose == 6) {
+            Addon();
         } else if (choose == 9) {
-            System.out.println("Insights currently unavailable..");
             Login();
+        }
+    }
+
+    public static void Addon() {
+        clearScreen();
+        System.out.println("Welche Zusatzkarte benötigst du?");
+        System.out.println("Erweiterungskarte 1 [1]");
+        System.out.println("Erweiterungskarte 2 [2]");
+        System.out.println("Erweiterungskarte 3 [3]");
+        System.out.println("Fahrradkarte [4]");
+        int chooseAddon = keyboard.nextInt();
+
+        if (chooseAddon == 1) {
+            Pay(priceAddon1, "Erweiterungskarte 1");
+        } else if (chooseAddon == 2) {
+            Pay(priceAddon2, "Erweiterungskarte 2");
+        } else if (chooseAddon == 3) {
+            Pay(priceAddon3, "Erweiterungskarte 3");
+        } else if (chooseAddon == 4) {
+            Pay(priceBike, "Fahrradkarte");
         }
     }
 
